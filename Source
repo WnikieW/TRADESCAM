@@ -1,0 +1,30 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+--window
+local Window = Library.CreateLib("trade scam", "BloodTheme")
+
+--tab
+local tab = Window:NewTab("trade scam")
+local tabw = tab:NewSection("trade scam")
+
+tabw:NewButton("Activate Trade Scam", "Activates trade scam", function()
+    print("Activated")
+end)
+
+--slider
+tabw:NewSlider("ms (100+)", "sets ms of the trade scam", 1000, 100, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.StarterPlayer.StarterPlayerScripts.TestBooths = s 
+end)
+
+--OPTIONAL!
+local bind = Window:NewTab("bind")
+local bindw = bind:NewSection("bind")
+
+bindw:NewKeybind("trade scam bind (set ms first)", "trade scam keybind", Enum.KeyCode.F, function()
+    print("Activated")
+end)
+
+
+bindw:NewKeybind("Toggle UI", "Toggles Gui", Enum.KeyCode.L, function()
+    Library:ToggleUI()
+end)
